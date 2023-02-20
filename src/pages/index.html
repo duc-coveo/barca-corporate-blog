@@ -1,0 +1,274 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Barca-Challenge</title>
+
+    <!-- Fonts -->
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@200;400;500&family=Vidaloka&display=swap" rel="stylesheet">
+    <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Css -->
+    <link href="/atomic/themes/coveo.css" rel="stylesheet" />
+    <link href="/build/barca-challenge.css" rel="stylesheet" />
+    <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- 
+      When using the Coveo CDN - Make sure you're using the same minor version as the packaged Atomic.
+      E.g., if you have "@coveo/atomic@1.44.3" installed, use the "/atomic/v1.44/" path.
+    
+      <script type="module" src="https://static.cloud.coveo.com/atomic/vMAJOR.MINOR/atomic.esm.js"></script> 
+    -->
+    <script type="module" src="/atomic/atomic.esm.js"></script>
+    <!-- Custom Elements Lazy Loading -->
+    <script type="module" src="/build/barca-challenge.esm.js"></script>
+    <!-- Global initialization script -->
+    <script type="module" src="/build/index.esm.js"></script>
+  </head>
+  <script>
+      function myFunction() {
+        var x = document.getElementById("topNav");
+        if (x.className === "barca-header-content") {
+          x.className += " responsive";
+        } else {
+          x.className = "barca-header-content";
+        }
+      }
+  </script>
+  <body>
+    <atomic-search-interface
+      id="search"
+      search-hub="new search page 1"
+      fields-to-include='["source","filetype","date","author","sourcetype","language","sports_blogimage"]'
+      pipeline="Corporate";
+    > 
+    <!-- header goes here -->
+    <section id="title">
+      <div class="barca-header-content" id="topNav">
+        <a class="logo">
+          <img src="img/Barca Logo.png" alt="">
+          <img src="img/Barca.png" alt="">
+        </a>
+        <a>Story</a>
+        <a>Lineup</a>
+        <a>Experience</a>
+        <a>Work with Us</a>
+        <a>Events</a>
+        <a class="logo" id="login">
+          <img src="img/User.png" alt="">
+          <img src="img/Log In.png" alt="">
+        </a>
+          <a class="checkout">
+          <img src="img/basket.png" alt="">
+          </div> 
+        </a>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+    </section>
+<!-- end of header -->  
+
+
+<!-- Search Box -->
+    <div class = 'search-header'>
+      <div class="onboarding">
+        How can we help you?
+      </div>
+      <div class="sub-onboarding">
+        Search for people or events
+      </div>
+      <atomic-search-box class = 'search-box'></atomic-search-box>
+    </div>
+
+      <atomic-search-layout>
+        <atomic-layout-section section="facets">
+          <atomic-facet-manager
+          ><atomic-timeframe-facet 
+              with-date-picker="true"
+              label="Date Range"
+            ></atomic-facet-manager>
+          <atomic-facet-manager
+            ><atomic-facet
+              field="source"
+              label="Source"
+              display-values-as="checkbox"
+            ></atomic-facet
+            ><atomic-facet
+              field="filetype"
+              label="Filetype"
+              display-values-as="checkbox"
+            ></atomic-facet>
+             <atomic-facet
+              field="filetype"
+              label="Filetype"
+              display-values-as="checkbox"
+            ></atomic-facet
+            ></atomic-facet-manager
+        ></atomic-layout-section>
+
+        <atomic-layout-section section="main">
+          <atomic-layout-section section="status">
+            <div class="nav">
+              <a class="tab" id="tab1">Events & Webinars</a>
+              <a class="tab" id="tab2">Brands</a>
+              <a class="tab" id="tab3" href="people.html">People</a>
+              <a class="tab" id="tab4">Blog</a>
+              <a class="tab" id="tab5">All Content</a>
+              <hr class="underline">
+
+            </div>
+            <hr/>
+            <atomic-breadbox></atomic-breadbox>
+            
+            <atomic-refine-toggle></atomic-refine-toggle>
+            <atomic-did-you-mean></atomic-did-you-mean>
+          </atomic-layout-section>
+          <atomic-layout-section section="results">
+            <atomic-result-list display="grid" imageSize="large" density="normal">
+              <atomic-result-template>
+                <template>
+                  <style>
+                    atomic-result-section-title{
+                        margin-top: 20px;
+                        font-family: 'Lexend';
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: 18px;
+                        line-height: 200%;
+                        letter-spacing: 0.011em;
+                        margin-left:5px;
+                    }
+
+                    atomic-result-section-excerpt{
+                      font-family: 'Lexend';
+                      font-style: normal;
+                      font-weight: 300;
+                      font-size: 13px;
+                      line-height: 200%;
+                      letter-spacing: 0.011em;
+                      color: #282829;
+                      margin-left:5px;
+                    }
+                    atomic-result-date{
+                      margin-left:5px;
+                      color: #8E959D;
+                      font-family: 'Lexend';
+                      font-style: normal;
+                      font-weight: 300;
+                      font-size: 12px;  
+                      line-height: 200%;                    
+                      letter-spacing: 0.011em
+
+                    }
+                    .read-more-button{
+                      display:flex ; 
+                      position:absolute;
+                      bottom:0;
+                      justify-content: center;
+                      background: linear-gradient(268.29deg, #101F6B 0.48%, #192B8A 100.81%);
+                      box-shadow: 0px 2px 8px rgba(229, 232, 232, 0.75);
+                      border-radius: 0px 8px; height: 5vh; width:100%;
+                    }
+
+                    .button{
+                      color: #E7F7FF;
+                      font-family: 'Lexend';
+                      font-style: normal;
+                      font-weight: 300;
+                      font-size: 16px;
+                      line-height: 200%;
+                      /* identical to box height, or 32px */
+                      
+                      text-align: center;
+                      letter-spacing: 0.011em;
+                      
+                      /* Cerulean Blue 20 */
+                      
+                      color: #E7F7FF;
+                    }
+
+                    @media (min-width: 1024px){
+                      atomic-result-list::part(result-list-grid-clickable-container) {
+                      grid-template-columns: repeat(3, 1fr);
+                      }
+                    }
+                  </style>
+                  <atomic-result-section-title><atomic-result-link></atomic-result-link>
+                  </atomic-result-section-title>
+                    <atomic-result-image
+                      field="sports_blogimage"
+                      loading="lazy"
+                    ></atomic-result-image>
+                  <atomic-result-section-excerpt>
+                    <atomic-result-text field="excerpt"></atomic-result-text>
+                  </atomic-result-section-excerpt>
+                  <atomic-result-date format="MMMM D, YYYY"></atomic-result-date>
+                  <div class="read-more-button">    
+                    <button class="button">
+                      Read more
+                    </button>
+                  </div>
+                </template>
+              </atomic-result-template>
+            <atomic-result-list>
+            <atomic-query-error></atomic-query-error>
+            <atomic-no-results></atomic-no-results>
+          </atomic-layout-section>
+          <atomic-layout-section section="pagination">
+            <atomic-load-more-results style="margin-top:5vh"></atomic-load-more-results>
+          </atomic-layout-section>
+        </atomic-layout-section>
+      </atomic-search-layout>
+    </atomic-search-interface>
+
+    <footer class="footer">
+      <img  class="diamond" src="img/Diamond.png" alt="">
+      <div class="left-section">
+        <img src="img/Barca_Footer.png" alt="">
+        <a href="#">Our Story</a>
+        <a href="#">Lineup</a>
+        <a href="#">The Barca Experience</a>
+        <a href="#">Work</a>
+        <a href="#">Events</a>
+      </div>
+      <div class="right-section">
+        <h3 class="contact-us">Contact Us</h3>
+        <h1 class="lets-talk">Let's Talk</h1>
+        <div class="input-section">
+          <input type="text" placeholder="Name">
+          <input type="text" placeholder="Company">
+          <input type="text" placeholder="Email">
+          <textarea placeholder="Leave a comment"></textarea>
+          <button class="footer-button">Dive in</button>
+        </div>
+      </div>
+    </footer>
+  
+    <script>
+      const tabs = document.querySelectorAll(".tab");
+      const underline = document.querySelector(".underline");
+  
+      tabs.forEach(tab => {
+        tab.addEventListener("click", function() {
+          tabs.forEach(tab => {
+            tab.style.color = "black";
+          });
+          this.style.color = "#12C7AE";
+          underline.style.width = `${this.offsetWidth}px`;
+          underline.style.left = `${this.offsetLeft}px`;
+        });
+      });
+      
+      const defaultTab = tabs[0];
+      defaultTab.style.color = "#12C7AE";
+      underline.style.width = `${defaultTab.offsetWidth}px`;
+      underline.style.left = `${defaultTab.offsetLeft}px`;
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,410 @@
+
+
+:root {
+  --atomic-primary: #12C7AE;
+  --atomic-primary-light: #linear-gradient(268.92deg, #24389E 0.9%, #4A61D4 99.08%);;
+  --atomic-primary-dark: #0d4fa5;
+  --atomic-on-background: #101F6B;
+}
+
+atomic-search-box::part(wrapper) {
+  height: 5vh;
+  width: 40vw;
+}
+
+
+body {
+  margin: 0;
+}
+
+atomic-search-layout {
+  position: relative;
+  height: auto;
+}
+
+.logo + atomic-layout-section[section="search"] {
+  padding-top: 5rem;
+}
+
+.logo {
+  position: absolute;
+  display: grid;
+  align-self: center;
+  align-items: center;
+  justify-items: center;
+  height: 4rem;
+  top: 0;
+  left: 0;
+  right: 0;
+  border-bottom: 1px solid var(--atomic-neutral);
+}
+
+.logo img {
+  display: none;
+  max-height: 2rem;
+}
+
+atomic-search-interface.hydrated .logo img {
+  display: block;
+}
+
+@media only screen and (min-width: 1024px) {
+  .logo + atomic-layout-section[section="search"] {
+    padding-top: 0;
+  }
+
+  .logo {
+    position: unset;
+    justify-items: center;
+    grid-area: 1 / 2;
+    height: 4.5rem;
+    border-bottom: none;
+  }
+
+  .logo img {
+    max-height: 3rem;
+    align-items: center;
+  }
+}
+
+/* .barca-header {
+  box-shadow: 1px 10px 25px rgb(180, 177, 177);
+  position: relative;
+  z-index: 10;
+  background: linear-gradient(177.96deg, rgba(16, 31, 107, 0) 33.34%, rgba(16, 31, 107, 0.1276) 98.66%);
+
+  
+} */
+  
+
+.barca-header-content{
+  
+  display:flex;
+  height: 8rem;
+  background: linear-gradient(180deg, #FFFFFF 0%, #F8FDFF 6.77%, #E7F7FF 100%, #D3F1FF 100%);
+  padding-left: 10ch;
+  padding-right: 10ch;
+  flex-direction: row;
+  align-items: center;
+  gap: 100px;
+  
+
+  font-family: 'Lexend', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  text-align: center;
+  letter-spacing: 0.011em;
+  color: #101F6B;
+
+    /* 
+  flex-direction: row;
+  align-items: center;
+  gap: 252px; */
+}
+
+.icon{
+  display:none;
+}
+
+/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+@media screen and (max-width: 1267px) {
+  .barca-header-content a:not(:first-child) {display: none;}
+  .barca-header-content a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+@media screen and (max-width: 1267px) {
+  .barca-header-content.responsive {position: relative;}
+  .barca-header-content.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .barca-header-content.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
+
+#login{
+  margin-left: auto;
+}
+
+.checkout{
+  margin-left: 0.001em;
+}
+
+
+.search-header{
+  height: 275px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background: linear-gradient(180deg, #EFFAFF 100%, #101F6B 100%);   */
+  background: linear-gradient(170.96deg, #EFFAFF 55.34%, #101f683d 98.66%);
+  text-align: center;
+  flex-direction: column;
+  margin-bottom: 5vh;
+}
+
+.search-box{
+  /* height: 52.5px;
+  width: 725px; */
+}
+
+.onboarding{
+    /* H3 */
+
+  font-family: 'Vidaloka';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 120%;
+  /* or 38px */
+
+  /* display: flex;
+  align-items: center; */
+  /* text-align: center; */
+  letter-spacing: 0.011em;
+  text-transform: uppercase;
+
+  /* Governor's Blue 90 */
+
+  color: #101F6B;
+}
+
+.sub-onboarding{
+font-family: 'Lexend';
+font-style: normal;
+font-weight: 200;
+font-size: 18px;
+line-height: 200%;
+/* identical to box height, or 36px */
+
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.011em;
+
+/* Governor's Blue 90 */
+
+color: #101F6B;
+
+padding-top: 1vh;
+padding-bottom: 1.75vh;
+}
+
+.main-tab{
+  display:flex;
+  flex-direction: row;
+  margin:auto;
+}
+
+
+.nav {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.tab {
+  padding: 10px 20px;
+  text-decoration: none;
+  color: black;
+  transition: color 0.3s;
+  font-family: 'Lexend';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 200%;
+}
+
+.underline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 10px;
+  background-color: black;
+  transition: width 0.3s, left 0.3s;
+}
+
+.button-div {
+
+}
+
+button {
+  display: flex;
+}
+
+
+.footer {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, #FFFFFF 0%, #F8FDFF 6.77%, #E7F7FF 100%, #D3F1FF 100%);
+  align-items: center;
+  justify-content: center;
+}
+
+.diamond{
+  position:absolute;
+  left:0;
+}
+.left-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  width: 60%;
+  padding-left: 20px;
+  height: 65%;
+  z-index: 1;
+}
+
+.left-section a {
+  margin-left: 6vw;
+  text-decoration: none;
+  color: #000000;
+  margin-bottom: 20px;
+
+  font-family: 'Lexend';
+  font-style: normal;
+  font-weight: 200;
+  font-size: 24px;
+  line-height: 150%;
+  /* identical to box height, or 36px */
+
+  letter-spacing: 0.011em;
+
+  /* Governor's Blue 90 */
+
+  color: #101F6B;
+}
+.left-section img{
+  margin-left:3vw;
+  margin-top:2vw;
+}
+
+.left-section a:hover {
+  text-decoration: underline;
+}
+
+.right-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 40%;
+  padding-right: 20px;
+  height: 100%;
+}
+
+.input-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  width:25vw;
+}
+
+input[type="text"] {
+  width: 110%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid black;
+}
+
+input[type="text"]::placeholder{
+  font-family: 'Lexend';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 20px;
+  /* identical to box height, or 143% */
+  color: #687CDF;
+}
+
+textarea {
+  width: 110%;
+  height: 20vh;
+  padding: 10px;
+  border: 1px solid black;
+  font-family: 'Lexend';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 20px;
+  /* identical to box height, or 143% */
+  color: #687CDF;
+}
+
+.contact-us {
+  margin-bottom: 20px;
+  margin-top: 10vh;
+  font-family: 'Lexend';
+  font-style: normal;
+  font-weight: 200;
+  font-size: 16px;
+  line-height: 100%;
+  /* identical to box height, or 16px */
+
+  letter-spacing: 0.011em;
+
+  /* Secondary/Indigo/5 */
+
+  color: #2E45BA;
+
+}
+
+.lets-talk {
+  margin-bottom: 20px;
+  font-family: 'Vidaloka';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 110%;
+  /* identical to box height, or 53px */
+
+  letter-spacing: 0.011em;
+  text-transform: uppercase;
+
+  /* Governor's Blue 90 */
+
+  color: #101F6B;
+
+}
+
+.footer-button{
+  display:flex;
+  align-self: flex-end;
+  margin-top: 2vh;
+  background: linear-gradient(268.92deg, #24389E 0.9%, #4A61D4 99.08%);
+  box-shadow: 0px 5px 30px rgba(222, 255, 250, 0.33);
+  border-radius: 0px 8px;
+  width: 128px;
+  height: 40px;
+  justify-content: center;
+align-items: center;
+
+  font-family: 'Lexend';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 100%;
+  /* identical to box height, or 16px */
+
+  text-align: center;
+  letter-spacing: 0.011em;
+
+  /* Cerulean Blue 20 */
+
+  color: #E7F7FF;
+}
